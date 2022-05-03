@@ -20,25 +20,28 @@
          name: "Nirbhik",
          age:24
         }
-        handleClick= (e) =>{
-          console.log(this.state);
+      handleChange= (e) =>{
           this.setState({
-              name: "Kartikey",
-              age:21
+              name: e.target.value,
           });
         }
-        hoverOver(e){
-          console.log(e.target.innerText);
+        
+        handleSubmit= (e) =>{
+          e.preventDefault();
+          console.log("form submitted",this.state.name)
         }
         render() {
            return (
-            
            <div className="app-content">
              <h1>React Js</h1> 
-             <p>Name is:  {this.state.name} , Age: {this.state.age}</p> 
-             <button onClick={this.handleClick}>Click me</button>
-             <button onMouseOver={this.hoverOver}>i am hover</button>
              
+             <form onSubmit={this.handleSubmit}>
+                <input type="text" onChange={this.handleChange} />
+                <button> Submit</button>
+            </form>
+            
+            <p>Name is:  {this.state.name} , Age: {this.state.age}</p> 
+            
             </div>
 
            )
