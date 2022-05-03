@@ -17,11 +17,15 @@
   <script type="text/babel">
       class App extends React.Component {
         state = {
-         name: "raj",
-         age:30
+         name: "Nirbhik",
+         age:24
         }
-        handleClick(e){
-          console.log(e.target);
+        handleClick= (e) =>{
+          console.log(this.state);
+          this.setState({
+              name: "Kartikey",
+              age:21
+          });
         }
         hoverOver(e){
           console.log(e.target.innerText);
@@ -30,10 +34,8 @@
            return (
             
            <div className="app-content">
-             <h1>Heya  nasisbad</h1> 
-             <p>{ Math.random()*10 }</p> 
-             <p>name is:{this.state.name}
-                age:{this.state.age}</p> 
+             <h1>React Js</h1> 
+             <p>Name is:  {this.state.name} , Age: {this.state.age}</p> 
              <button onClick={this.handleClick}>Click me</button>
              <button onMouseOver={this.hoverOver}>i am hover</button>
              
